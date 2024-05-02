@@ -1,8 +1,15 @@
-# movie_app
+# Movie App
+Flutter project.
 
-A new Movie project.
-
-## Getting Started
+## Tech Stacks
+* Flutter
+* Dart
+* Bloc
+* DI
+* Clean Architecture
+* Material 3
+* Extension fn
+* And much more!
 
 This project is a starting point for a Flutter application.
 
