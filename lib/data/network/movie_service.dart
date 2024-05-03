@@ -6,9 +6,9 @@ import '../../di/index.dart';
 class MoviesService {
   final client = di<MoviesClient>();
 
-  Future<Response> getNowPlayingMovies() async {
+  Future<Response> getNowPlayingMovies(int page) async {
     try {
-      final uri = Uri.parse(EndPoints.nowPlaying);
+      final uri = Uri.parse("${EndPoints.nowPlaying}$page");
       final response = await client.get(uri);
       return response;
     } catch (_) {

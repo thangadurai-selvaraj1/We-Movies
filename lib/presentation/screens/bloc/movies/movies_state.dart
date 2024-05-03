@@ -9,9 +9,9 @@ sealed class MoviesTopRatedState {}
 final class MoviesNowPlayingInitial extends MoviesNowPlayingState {}
 
 final class MoviesNowPlayingSuccessState extends MoviesNowPlayingState {
-  final NowPlaying nowPlaying;
+  final List<Results>? results;
 
-  MoviesNowPlayingSuccessState(this.nowPlaying);
+  MoviesNowPlayingSuccessState(this.results);
 }
 
 final class MoviesNowPlayingFailureState extends MoviesNowPlayingState {
@@ -26,9 +26,9 @@ final class MoviesNowPlayingLoadingState extends MoviesNowPlayingState {}
 final class MoviesTopRatedInitial extends MoviesTopRatedState {}
 
 final class MoviesTopRatedSuccessState extends MoviesTopRatedState {
-  final TopRated topRated;
+  final List<Results>? results;
 
-  MoviesTopRatedSuccessState(this.topRated);
+  MoviesTopRatedSuccessState(this.results);
 }
 
 final class MoviesTopRatedFailureState extends MoviesTopRatedState {

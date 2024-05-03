@@ -12,13 +12,13 @@ class HomeRepoImpl implements HomeRepo {
   HomeRepoImpl(this.moviesService);
 
   @override
-  Future<Result<NowPlaying>> getNowPlayingMovies() async {
+  Future<Result<NowPlaying>> getNowPlayingMovies(int page) async {
     try {
       final network = await hasInternetAccess();
       if (network) {
         return Failure(Exception('No Network!'));
       } else {
-        final response = await moviesService.getNowPlayingMovies();
+        final response = await moviesService.getNowPlayingMovies(page);
         switch (response.statusCode) {
           case 200:
             final data = json.decode(response.body);
